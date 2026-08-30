@@ -1,66 +1,342 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Daniel's Graduation 🎓</title>
+    <title>Daniel's Graduation · 2026</title>
 
     <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
-            font-family: Arial, sans-serif;
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 40px 20px;
+            margin: 0;
+            background: #f7f5f0;
+            color: #242424;
+            font-family: Georgia, "Times New Roman", serif;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            padding: 70px 24px 100px;
+        }
+
+        /* HERO */
+
+        .hero {
             text-align: center;
-            background: #f7f7f7;
+            padding: 40px 0 80px;
         }
 
-        h1 {
-            font-size: 32px;
+        .cap {
+            font-size: 42px;
+            margin-bottom: 25px;
         }
 
-        p {
-            color: #555;
+        .hero h1 {
+            font-size: clamp(42px, 8vw, 76px);
+            font-weight: normal;
+            letter-spacing: -2px;
+            margin: 0;
         }
 
-        .button {
+        .year {
+            margin-top: 14px;
+            font-family: Arial, sans-serif;
+            font-size: 13px;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            color: #777;
+        }
+
+        .intro {
+            max-width: 500px;
+            margin: 30px auto 0;
+            font-size: 18px;
+            line-height: 1.7;
+            color: #666;
+        }
+
+        /* SECTION */
+
+        .section {
+            margin-bottom: 90px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .section-title span {
             display: block;
-            margin: 15px 0;
-            padding: 16px;
-            background: white;
-            border-radius: 12px;
+            font-family: Arial, sans-serif;
+            font-size: 11px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: #999;
+            margin-bottom: 10px;
+        }
+
+        .section-title h2 {
+            margin: 0;
+            font-size: 32px;
+            font-weight: normal;
+        }
+
+        /* GALLERY */
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+        }
+
+        .photo {
+            width: 100%;
+            height: 360px;
+            object-fit: cover;
+            border-radius: 3px;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+
+        .photo:hover {
+            transform: scale(1.015);
+        }
+
+        .gallery .large {
+            grid-column: span 2;
+            height: 520px;
+        }
+
+        /* FRIENDS */
+
+        .friends {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+        }
+
+        .friends .photo {
+            height: 300px;
+        }
+
+        /* LINKS */
+
+        .links {
+            max-width: 550px;
+            margin: auto;
+        }
+
+        .link {
+            display: block;
+            padding: 18px 20px;
+            margin: 12px 0;
+            border: 1px solid #d8d4cc;
+            border-radius: 4px;
+            text-align: center;
             text-decoration: none;
-            color: #222;
-            border: 1px solid #ddd;
+            color: #242424;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            transition: all 0.25s ease;
+            background: rgba(255,255,255,0.35);
         }
 
-        .button:hover {
-            background: #eee;
+        .link:hover {
+            background: #242424;
+            color: white;
         }
 
-        .coming-soon {
-            margin: 30px 0;
-            padding: 20px;
-            background: white;
-            border-radius: 12px;
+        /* FOOTER */
+
+        footer {
+            text-align: center;
+            padding-top: 20px;
+            color: #999;
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+            letter-spacing: 1px;
+        }
+
+        @media (max-width: 650px) {
+
+            .container {
+                padding: 45px 16px 70px;
+            }
+
+            .hero {
+                padding: 30px 0 60px;
+            }
+
+            .gallery {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery .large {
+                grid-column: span 1;
+                height: 400px;
+            }
+
+            .photo {
+                height: 330px;
+            }
+
+            .friends {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .friends .photo {
+                height: 240px;
+            }
         }
     </style>
 </head>
 
 <body>
 
-    <h1>🎓 Daniel's Graduation</h1>
+<div class="container">
 
-    <p>Class of 2026</p>
+    <!-- HERO -->
 
-    <div class="coming-soon">
-        <h2>Graduation memories coming soon!</h2>
-        <p>
-            Check back after the ceremony for photos,
-            videos and memories.
+    <header class="hero">
+
+        <div class="cap">🎓</div>
+
+        <h1>Daniel's Graduation</h1>
+
+        <div class="year">
+            Class of 2026
+        </div>
+
+        <p class="intro">
+            A few moments from a day I'll always remember.
         </p>
-    </div>
+
+    </header>
+
+
+    <!-- HIGHLIGHTS -->
+
+    <section class="section">
+
+        <div class="section-title">
+            <span>Memories</span>
+            <h2>Highlights</h2>
+        </div>
+
+        <div class="gallery">
+
+            <img
+                class="photo large"
+                src="images/highlights/highlight1.jpg"
+                alt="Graduation highlight">
+
+            <img
+                class="photo"
+                src="images/highlights/highlight2.jpg"
+                alt="Graduation highlight">
+
+            <img
+                class="photo"
+                src="images/highlights/highlight3.jpg"
+                alt="Graduation highlight">
+
+            <img
+                class="photo"
+                src="images/highlights/highlight4.jpg"
+                alt="Graduation highlight">
+
+        </div>
+
+    </section>
+
+
+    <!-- FRIENDS -->
+
+    <section class="section">
+
+        <div class="section-title">
+            <span>The people</span>
+            <h2>With Friends</h2>
+        </div>
+
+        <div class="friends">
+
+            <img
+                class="photo"
+                src="images/friends/friend1.jpg"
+                alt="Graduation with friends">
+
+            <img
+                class="photo"
+                src="images/friends/friend2.jpg"
+                alt="Graduation with friends">
+
+            <img
+                class="photo"
+                src="images/friends/friend3.jpg"
+                alt="Graduation with friends">
+
+            <img
+                class="photo"
+                src="images/friends/friend4.jpg"
+                alt="Graduation with friends">
+
+        </div>
+
+    </section>
+
+
+    <!-- LINKS -->
+
+    <section class="section">
+
+        <div class="section-title">
+            <span>More</span>
+            <h2>Keep the memories</h2>
+        </div>
+
+        <div class="links">
+
+            <!-- Replace these links later -->
+
+            <a class="link" href="#">
+                🎥 Graduation Video
+            </a>
+
+            <a class="link" href="#">
+                📱 Instagram
+            </a>
+
+            <a class="link" href="#">
+                📘 Facebook
+            </a>
+
+            <a class="link" href="#">
+                📁 Full Album
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <footer>
+        Graduation · 2026
+    </footer>
+
+</div>
 
 </body>
 </html>
+```
