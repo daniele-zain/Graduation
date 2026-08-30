@@ -4,9 +4,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Daniel's Graduation · 2026</title>
 
 <style>
+
 * {
     box-sizing: border-box;
 }
@@ -24,7 +26,6 @@ body {
 
 img {
     display: block;
-    max-width: 100%;
 }
 
 .container {
@@ -118,64 +119,66 @@ img {
 
 
 /* =========================
-   NATURAL PHOTO GALLERY
-
-   Photos keep their original
-   portrait/landscape proportions.
-   Nothing is cropped.
+   HIGHLIGHTS
+   ALL PORTRAIT
 ========================= */
 
 .highlights {
-    columns: 2 420px;
-    column-gap: 18px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
 }
 
 .highlight {
-    break-inside: avoid;
-    margin-bottom: 18px;
     overflow: hidden;
     cursor: pointer;
-    background: #e8e5df;
+    background: #ddd;
+    aspect-ratio: 3 / 4;
 }
 
 .highlight img {
     width: 100%;
-    height: auto;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
     display: block;
     transition: transform .5s ease;
 }
 
 .highlight:hover img {
-    transform: scale(1.015);
+    transform: scale(1.025);
 }
 
 
 /* =========================
    FRIENDS
+   ALL PORTRAIT
 ========================= */
 
 .friends {
-    columns: 3 280px;
-    column-gap: 18px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
 }
 
 .friend {
-    break-inside: avoid;
-    margin-bottom: 18px;
     overflow: hidden;
     cursor: pointer;
-    background: #e8e5df;
+    background: #ddd;
+    aspect-ratio: 3 / 4;
 }
 
 .friend img {
     width: 100%;
-    height: auto;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
     display: block;
     transition: transform .5s ease;
 }
 
 .friend:hover img {
-    transform: scale(1.015);
+    transform: scale(1.025);
 }
 
 
@@ -305,21 +308,36 @@ footer {
         font-size: 32px;
     }
 
-    /*
-       One column on phones makes every
-       photo easy to see at its natural ratio.
-    */
-
     .highlights,
     .friends {
-        columns: 1;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
     }
 
     .highlight,
     .friend {
-        margin-bottom: 12px;
+        aspect-ratio: 3 / 4;
     }
 }
+
+
+/* =========================
+   SMALL PHONES
+========================= */
+
+@media (max-width: 420px) {
+
+    .highlights,
+    .friends {
+        grid-template-columns: 1fr;
+    }
+
+    .highlight,
+    .friend {
+        aspect-ratio: 3 / 4;
+    }
+}
+
 </style>
 </head>
 
@@ -383,66 +401,57 @@ footer {
     <div class="highlights">
 
         <div class="highlight">
-            <img
-                src="images/highlights/highlight1.jpg"
-                alt="Graduation highlight"
-                onclick="openLightbox(this.src)">
+            <img src="images/highlights/highlight1.jpg"
+                 alt="Graduation highlight"
+                 onclick="openLightbox(this.src)">
         </div>
 
         <div class="highlight">
-            <img
-                src="images/highlights/highlight2.jpg"
-                alt="Graduation highlight"
-                onclick="openLightbox(this.src)">
+            <img src="images/highlights/highlight2.jpg"
+                 alt="Graduation highlight"
+                 onclick="openLightbox(this.src)">
         </div>
 
         <div class="highlight">
-            <img
-                src="images/highlights/highlight3.jpg"
-                alt="Graduation highlight"
-                onclick="openLightbox(this.src)">
+            <img src="images/highlights/highlight3.jpg"
+                 alt="Graduation highlight"
+                 onclick="openLightbox(this.src)">
         </div>
 
         <div class="highlight">
-            <img
-                src="images/highlights/highlight4.jpg"
-                alt="Graduation highlight"
-                onclick="openLightbox(this.src)">
+            <img src="images/highlights/highlight4.jpg"
+                 alt="Graduation highlight"
+                 onclick="openLightbox(this.src)">
         </div>
 
         <div class="highlight">
-            <img
-                src="images/highlights/highlight5.jpg"
-                alt="Graduation highlight"
-                onclick="openLightbox(this.src)">
+            <img src="images/highlights/highlight5.jpg"
+                 alt="Graduation highlight"
+                 onclick="openLightbox(this.src)">
         </div>
 
         <div class="highlight">
-            <img
-                src="images/highlights/highlight6.jpg"
-                alt="Graduation highlight"
-                onclick="openLightbox(this.src)">
+            <img src="images/highlights/highlight6.jpg"
+                 alt="Graduation highlight"
+                 onclick="openLightbox(this.src)">
         </div>
 
         <div class="highlight">
-            <img
-                src="images/highlights/highlight7.jpg"
-                alt="Graduation highlight"
-                onclick="openLightbox(this.src)">
+            <img src="images/highlights/highlight7.jpg"
+                 alt="Graduation highlight"
+                 onclick="openLightbox(this.src)">
         </div>
 
         <div class="highlight">
-            <img
-                src="images/highlights/highlight8.jpg"
-                alt="Graduation highlight"
-                onclick="openLightbox(this.src)">
+            <img src="images/highlights/highlight8.jpg"
+                 alt="Graduation highlight"
+                 onclick="openLightbox(this.src)">
         </div>
 
         <div class="highlight">
-            <img
-                src="images/highlights/highlight9.jpg"
-                alt="Graduation highlight"
-                onclick="openLightbox(this.src)">
+            <img src="images/highlights/highlight9.jpg"
+                 alt="Graduation highlight"
+                 onclick="openLightbox(this.src)">
         </div>
 
     </div>
@@ -475,94 +484,81 @@ footer {
     <div class="friends">
 
         <div class="friend">
-            <img
-                src="images/friends/friend1.jpg"
-                alt="Graduation with friends"
-                onclick="openLightbox(this.src)">
+            <img src="images/friends/friend1.jpg"
+                 alt="Graduation with friends"
+                 onclick="openLightbox(this.src)">
         </div>
 
         <div class="friend">
-            <img
-                src="images/friends/friend2.jpg"
-                alt="Graduation with friends"
-                onclick="openLightbox(this.src)">
+            <img src="images/friends/friend2.jpg"
+                 alt="Graduation with friends"
+                 onclick="openLightbox(this.src)">
         </div>
 
         <div class="friend">
-            <img
-                src="images/friends/friend3.jpg"
-                alt="Graduation with friends"
-                onclick="openLightbox(this.src)">
+            <img src="images/friends/friend3.jpg"
+                 alt="Graduation with friends"
+                 onclick="openLightbox(this.src)">
         </div>
 
         <div class="friend">
-            <img
-                src="images/friends/friend4.jpg"
-                alt="Graduation with friends"
-                onclick="openLightbox(this.src)">
+            <img src="images/friends/friend4.jpg"
+                 alt="Graduation with friends"
+                 onclick="openLightbox(this.src)">
         </div>
 
         <div class="friend">
-            <img
-                src="images/friends/friend5.jpg"
-                alt="Graduation with friends"
-                onclick="openLightbox(this.src)">
+            <img src="images/friends/friend5.jpg"
+                 alt="Graduation with friends"
+                 onclick="openLightbox(this.src)">
         </div>
 
         <div class="friend">
-            <img
-                src="images/friends/friend6.jpg"
-                alt="Graduation with friends"
-                onclick="openLightbox(this.src)">
+            <img src="images/friends/friend6.jpg"
+                 alt="Graduation with friends"
+                 onclick="openLightbox(this.src)">
         </div>
 
         <div class="friend">
-            <img
-                src="images/friends/friend7.jpg"
-                alt="Graduation with friends"
-                onclick="openLightbox(this.src)">
+            <img src="images/friends/friend7.jpg"
+                 alt="Graduation with friends"
+                 onclick="openLightbox(this.src)">
         </div>
 
         <div class="friend">
-            <img
-                src="images/friends/friend8.jpg"
-                alt="Graduation with friends"
-                onclick="openLightbox(this.src)">
+            <img src="images/friends/friend8.jpg"
+                 alt="Graduation with friends"
+                 onclick="openLightbox(this.src)">
         </div>
 
         <div class="friend">
-            <img
-                src="images/friends/friend9.jpg"
-                alt="Graduation with friends"
-                onclick="openLightbox(this.src)">
+            <img src="images/friends/friend9.jpg"
+                 alt="Graduation with friends"
+                 onclick="openLightbox(this.src)">
         </div>
 
         <div class="friend">
-            <img
-                src="images/friends/friend10.jpg"
-                alt="Graduation with friends"
-                onclick="openLightbox(this.src)">
+            <img src="images/friends/friend10.jpg"
+                 alt="Graduation with friends"
+                 onclick="openLightbox(this.src)">
         </div>
 
         <div class="friend">
-            <img
-                src="images/friends/friend11.jpg"
-                alt="Graduation with friends"
-                onclick="openLightbox(this.src)">
+            <img src="images/friends/friend11.jpg"
+                 alt="Graduation with friends"
+                 onclick="openLightbox(this.src)">
         </div>
 
         <div class="friend">
-            <img
-                src="images/friends/friend12.jpg"
-                alt="Graduation with friends"
-                onclick="openLightbox(this.src)">
+            <img src="images/friends/friend12.jpg"
+                 alt="Graduation with friends"
+                 onclick="openLightbox(this.src)">
         </div>
 
         <div class="friend">
-            <img
-                src="images/friends/friend13.jpg"
-                alt="Graduation with friends"
-                onclick="openLightbox(this.src)">
+            <img src="images/friends/friend13.jpg"
+                 alt="Graduation with friends"
+                 onclick="openLightbox(this.src)">
         </div>
 
     </div>
@@ -594,7 +590,7 @@ footer {
 
     <div class="more">
 
-        <!-- Replace # with your actual links later -->
+        <!-- Replace # with your real links later -->
 
         <a class="link" href="#">
             🎥 &nbsp; Graduation Video
