@@ -8,6 +8,11 @@
     <title>Daniel's Graduation · 2026</title>
 
     <style>
+
+        /* =========================
+           GENERAL
+        ========================== */
+
         * {
             box-sizing: border-box;
         }
@@ -23,307 +28,608 @@
             font-family: Georgia, "Times New Roman", serif;
         }
 
-        .container {
-            max-width: 1000px;
-            margin: auto;
-            padding: 70px 24px 100px;
+        img {
+            max-width: 100%;
         }
 
-        /* HERO */
+        .container {
+            width: min(1100px, calc(100% - 40px));
+            margin: auto;
+        }
+
+
+        /* =========================
+           HERO
+        ========================== */
 
         .hero {
+            min-height: 85vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             text-align: center;
-            padding: 40px 0 80px;
+            padding: 70px 0;
+        }
+
+        .hero-content {
+            max-width: 700px;
         }
 
         .cap {
             font-size: 42px;
-            margin-bottom: 25px;
+            margin-bottom: 30px;
         }
 
         .hero h1 {
-            font-size: clamp(42px, 8vw, 76px);
-            font-weight: normal;
-            letter-spacing: -2px;
             margin: 0;
+            font-size: clamp(45px, 8vw, 82px);
+            font-weight: normal;
+            letter-spacing: -3px;
+            line-height: 1;
         }
 
         .year {
-            margin-top: 14px;
+            margin-top: 22px;
             font-family: Arial, sans-serif;
-            font-size: 13px;
-            letter-spacing: 5px;
+            font-size: 12px;
+            letter-spacing: 6px;
             text-transform: uppercase;
-            color: #777;
+            color: #888;
         }
 
         .intro {
             max-width: 500px;
-            margin: 30px auto 0;
-            font-size: 18px;
-            line-height: 1.7;
-            color: #666;
+            margin: 32px auto 0;
+            font-size: 19px;
+            line-height: 1.8;
+            color: #6c6c6c;
         }
 
-        /* SECTION */
+        .scroll {
+            margin-top: 60px;
+            font-family: Arial, sans-serif;
+            font-size: 10px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #999;
+        }
+
+
+        /* =========================
+           SECTIONS
+        ========================== */
 
         .section {
-            margin-bottom: 90px;
+            padding: 90px 0;
         }
 
-        .section-title {
+        .section-heading {
             text-align: center;
-            margin-bottom: 35px;
+            margin-bottom: 45px;
         }
 
-        .section-title span {
+        .section-heading .small {
             display: block;
+            margin-bottom: 12px;
             font-family: Arial, sans-serif;
-            font-size: 11px;
+            font-size: 10px;
             letter-spacing: 4px;
             text-transform: uppercase;
             color: #999;
-            margin-bottom: 10px;
         }
 
-        .section-title h2 {
+        .section-heading h2 {
             margin: 0;
-            font-size: 32px;
+            font-size: 38px;
             font-weight: normal;
         }
 
-        /* GALLERY */
 
-        .gallery {
+        /* =========================
+           HIGHLIGHTS
+        ========================== */
+
+        .highlights {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 16px;
+            gap: 18px;
         }
 
-        .photo {
+        .highlight {
+            overflow: hidden;
+            cursor: pointer;
+            background: #ddd;
+        }
+
+        .highlight img {
             width: 100%;
-            height: 360px;
+            height: 400px;
             object-fit: cover;
-            border-radius: 3px;
             display: block;
-            transition: transform 0.3s ease;
+            transition: transform 0.5s ease;
         }
 
-        .photo:hover {
-            transform: scale(1.015);
+        .highlight:hover img {
+            transform: scale(1.025);
         }
 
-        .gallery .large {
+        .highlight.featured {
             grid-column: span 2;
-            height: 520px;
         }
 
-        /* FRIENDS */
+        .highlight.featured img {
+            height: 570px;
+        }
+
+
+        /* =========================
+           FRIENDS
+        ========================== */
 
         .friends {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 16px;
+            columns: 3 280px;
+            column-gap: 18px;
         }
 
-        .friends .photo {
-            height: 300px;
+        .friend {
+            break-inside: avoid;
+            margin-bottom: 18px;
+            overflow: hidden;
+            cursor: pointer;
+            background: #ddd;
         }
 
-        /* LINKS */
+        .friend img {
+            width: 100%;
+            display: block;
+            transition: transform 0.5s ease;
+        }
 
-        .links {
-            max-width: 550px;
+        .friend:hover img {
+            transform: scale(1.025);
+        }
+
+
+        /* =========================
+           MORE MEMORIES
+        ========================== */
+
+        .more {
+            max-width: 600px;
             margin: auto;
         }
 
         .link {
             display: block;
-            padding: 18px 20px;
-            margin: 12px 0;
-            border: 1px solid #d8d4cc;
-            border-radius: 4px;
-            text-align: center;
+            padding: 20px;
+            margin: 14px 0;
+            border: 1px solid #d5d1c9;
+            border-radius: 3px;
             text-decoration: none;
+            text-align: center;
             color: #242424;
             font-family: Arial, sans-serif;
             font-size: 14px;
             transition: all 0.25s ease;
-            background: rgba(255,255,255,0.35);
+            background: rgba(255,255,255,0.3);
         }
 
         .link:hover {
             background: #242424;
             color: white;
+            border-color: #242424;
         }
 
-        /* FOOTER */
+
+        /* =========================
+           DIVIDER
+        ========================== */
+
+        .divider {
+            width: 60px;
+            height: 1px;
+            background: #c9c5bd;
+            margin: 0 auto;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================== */
 
         footer {
             text-align: center;
-            padding-top: 20px;
+            padding: 50px 0 70px;
             color: #999;
             font-family: Arial, sans-serif;
-            font-size: 12px;
-            letter-spacing: 1px;
+            font-size: 11px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
         }
 
-        @media (max-width: 650px) {
+
+        /* =========================
+           LIGHTBOX
+        ========================== */
+
+        .lightbox {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.92);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 30px;
+            z-index: 1000;
+        }
+
+        .lightbox.active {
+            display: flex;
+        }
+
+        .lightbox img {
+            max-width: 95vw;
+            max-height: 90vh;
+            object-fit: contain;
+        }
+
+        .close {
+            position: fixed;
+            top: 20px;
+            right: 25px;
+            color: white;
+            font-family: Arial, sans-serif;
+            font-size: 30px;
+            cursor: pointer;
+            font-weight: 200;
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================== */
+
+        @media (max-width: 700px) {
 
             .container {
-                padding: 45px 16px 70px;
+                width: min(100% - 28px, 600px);
             }
 
             .hero {
-                padding: 30px 0 60px;
+                min-height: 80vh;
+                padding: 50px 0;
             }
 
-            .gallery {
+            .hero h1 {
+                letter-spacing: -2px;
+            }
+
+            .intro {
+                font-size: 17px;
+            }
+
+            .section {
+                padding: 65px 0;
+            }
+
+            .section-heading h2 {
+                font-size: 32px;
+            }
+
+            .highlights {
                 grid-template-columns: 1fr;
+                gap: 12px;
             }
 
-            .gallery .large {
+            .highlight.featured {
                 grid-column: span 1;
-                height: 400px;
             }
 
-            .photo {
-                height: 330px;
+            .highlight img,
+            .highlight.featured img {
+                height: 420px;
             }
 
             .friends {
-                grid-template-columns: repeat(2, 1fr);
+                columns: 2 150px;
+                column-gap: 10px;
             }
 
-            .friends .photo {
-                height: 240px;
+            .friend {
+                margin-bottom: 10px;
             }
         }
+
     </style>
 </head>
+
 
 <body>
 
 <div class="container">
 
-    <!-- HERO -->
+
+    <!-- =========================
+         HERO
+    ========================== -->
 
     <header class="hero">
 
-        <div class="cap">🎓</div>
+        <div class="hero-content">
 
-        <h1>Daniel's Graduation</h1>
+            <div class="cap">🎓</div>
 
-        <div class="year">
-            Class of 2026
+            <h1>
+                Daniel's<br>
+                Graduation
+            </h1>
+
+            <div class="year">
+                Class of 2026
+            </div>
+
+            <p class="intro">
+                A few moments from a day I'll always remember.
+            </p>
+
+            <div class="scroll">
+                ↓ &nbsp; memories
+            </div>
+
         </div>
-
-        <p class="intro">
-            A few moments from a day I'll always remember.
-        </p>
 
     </header>
 
 
-    <!-- HIGHLIGHTS -->
+    <!-- =========================
+         HIGHLIGHTS
+    ========================== -->
 
     <section class="section">
 
-        <div class="section-title">
-            <span>Memories</span>
-            <h2>Highlights</h2>
+        <div class="section-heading">
+
+            <span class="small">
+                The day
+            </span>
+
+            <h2>
+                Highlights
+            </h2>
+
         </div>
 
-        <div class="gallery">
 
-            <img
-                class="photo large"
-                src="images/highlights/highlight1.jpg"
-                alt="Graduation highlight">
+        <div class="highlights">
 
-            <img
-                class="photo"
-                src="images/highlights/highlight2.jpg"
-                alt="Graduation highlight">
+            <div class="highlight featured">
+                <img
+                    src="images/highlights/highlight1.jpg"
+                    alt="Graduation highlight"
+                    onclick="openLightbox(this.src)">
+            </div>
 
-            <img
-                class="photo"
-                src="images/highlights/highlight3.jpg"
-                alt="Graduation highlight">
+            <div class="highlight">
+                <img
+                    src="images/highlights/highlight2.jpg"
+                    alt="Graduation highlight"
+                    onclick="openLightbox(this.src)">
+            </div>
 
-            <img
-                class="photo"
-                src="images/highlights/highlight4.jpg"
-                alt="Graduation highlight">
+            <div class="highlight">
+                <img
+                    src="images/highlights/highlight3.jpg"
+                    alt="Graduation highlight"
+                    onclick="openLightbox(this.src)">
+            </div>
+
+            <div class="highlight">
+                <img
+                    src="images/highlights/highlight4.jpg"
+                    alt="Graduation highlight"
+                    onclick="openLightbox(this.src)">
+            </div>
+
+            <div class="highlight">
+                <img
+                    src="images/highlights/highlight5.jpg"
+                    alt="Graduation highlight"
+                    onclick="openLightbox(this.src)">
+            </div>
+
+            <div class="highlight">
+                <img
+                    src="images/highlights/highlight6.jpg"
+                    alt="Graduation highlight"
+                    onclick="openLightbox(this.src)">
+            </div>
+
+            <div class="highlight">
+                <img
+                    src="images/highlights/highlight7.jpg"
+                    alt="Graduation highlight"
+                    onclick="openLightbox(this.src)">
+            </div>
+
+            <div class="highlight">
+                <img
+                    src="images/highlights/highlight8.jpg"
+                    alt="Graduation highlight"
+                    onclick="openLightbox(this.src)">
+            </div>
+
+            <div class="highlight">
+                <img
+                    src="images/highlights/highlight9.jpg"
+                    alt="Graduation highlight"
+                    onclick="openLightbox(this.src)">
+            </div>
 
         </div>
 
     </section>
 
 
-    <!-- FRIENDS -->
+    <div class="divider"></div>
+
+
+    <!-- =========================
+         FRIENDS
+    ========================== -->
 
     <section class="section">
 
-        <div class="section-title">
-            <span>The people</span>
-            <h2>With Friends</h2>
+        <div class="section-heading">
+
+            <span class="small">
+                The people
+            </span>
+
+            <h2>
+                With Friends
+            </h2>
+
         </div>
+
 
         <div class="friends">
 
-            <img
-                class="photo"
-                src="images/friends/friend1.jpg"
-                alt="Graduation with friends">
+            <div class="friend">
+                <img
+                    src="images/friends/friend1.jpg"
+                    alt="Graduation with friends"
+                    onclick="openLightbox(this.src)">
+            </div>
 
-            <img
-                class="photo"
-                src="images/friends/friend2.jpg"
-                alt="Graduation with friends">
+            <div class="friend">
+                <img
+                    src="images/friends/friend2.jpg"
+                    alt="Graduation with friends"
+                    onclick="openLightbox(this.src)">
+            </div>
 
-            <img
-                class="photo"
-                src="images/friends/friend3.jpg"
-                alt="Graduation with friends">
+            <div class="friend">
+                <img
+                    src="images/friends/friend3.jpg"
+                    alt="Graduation with friends"
+                    onclick="openLightbox(this.src)">
+            </div>
 
-            <img
-                class="photo"
-                src="images/friends/friend4.jpg"
-                alt="Graduation with friends">
+            <div class="friend">
+                <img
+                    src="images/friends/friend4.jpg"
+                    alt="Graduation with friends"
+                    onclick="openLightbox(this.src)">
+            </div>
+
+            <div class="friend">
+                <img
+                    src="images/friends/friend5.jpg"
+                    alt="Graduation with friends"
+                    onclick="openLightbox(this.src)">
+            </div>
+
+            <div class="friend">
+                <img
+                    src="images/friends/friend6.jpg"
+                    alt="Graduation with friends"
+                    onclick="openLightbox(this.src)">
+            </div>
+
+            <div class="friend">
+                <img
+                    src="images/friends/friend7.jpg"
+                    alt="Graduation with friends"
+                    onclick="openLightbox(this.src)">
+            </div>
+
+            <div class="friend">
+                <img
+                    src="images/friends/friend8.jpg"
+                    alt="Graduation with friends"
+                    onclick="openLightbox(this.src)">
+            </div>
+
+            <div class="friend">
+                <img
+                    src="images/friends/friend9.jpg"
+                    alt="Graduation with friends"
+                    onclick="openLightbox(this.src)">
+            </div>
+
+            <div class="friend">
+                <img
+                    src="images/friends/friend10.jpg"
+                    alt="Graduation with friends"
+                    onclick="openLightbox(this.src)">
+            </div>
+
+            <div class="friend">
+                <img
+                    src="images/friends/friend11.jpg"
+                    alt="Graduation with friends"
+                    onclick="openLightbox(this.src)">
+            </div>
+
+            <div class="friend">
+                <img
+                    src="images/friends/friend12.jpg"
+                    alt="Graduation with friends"
+                    onclick="openLightbox(this.src)">
+            </div>
+
+            <div class="friend">
+                <img
+                    src="images/friends/friend13.jpg"
+                    alt="Graduation with friends"
+                    onclick="openLightbox(this.src)">
+            </div>
 
         </div>
 
     </section>
 
 
-    <!-- LINKS -->
+    <div class="divider"></div>
+
+
+    <!-- =========================
+         MORE MEMORIES
+    ========================== -->
 
     <section class="section">
 
-        <div class="section-title">
-            <span>More</span>
-            <h2>Keep the memories</h2>
+        <div class="section-heading">
+
+            <span class="small">
+                More
+            </span>
+
+            <h2>
+                Keep the memories
+            </h2>
+
         </div>
 
-        <div class="links">
 
-            <!-- Replace these links later -->
+        <div class="more">
+
+            <!-- Replace # with your actual links -->
 
             <a class="link" href="#">
-                🎥 Graduation Video
+                🎥 &nbsp; Graduation Video
             </a>
 
             <a class="link" href="#">
-                📱 Instagram
+                📸 &nbsp; Full Photo Album
             </a>
 
             <a class="link" href="#">
-                📘 Facebook
+                📱 &nbsp; Instagram
             </a>
 
             <a class="link" href="#">
-                📁 Full Album
+                📘 &nbsp; Facebook
             </a>
 
         </div>
@@ -331,11 +637,75 @@
     </section>
 
 
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
     <footer>
+
         Graduation · 2026
+
     </footer>
 
 </div>
+
+
+<!-- =========================
+     LIGHTBOX
+========================== -->
+
+<div
+    class="lightbox"
+    id="lightbox"
+    onclick="closeLightbox()">
+
+    <div class="close">
+        ×
+    </div>
+
+    <img
+        id="lightbox-image"
+        src=""
+        alt="Expanded graduation photo">
+
+</div>
+
+
+<script>
+
+    function openLightbox(src) {
+
+        const lightbox =
+            document.getElementById("lightbox");
+
+        const image =
+            document.getElementById("lightbox-image");
+
+        image.src = src;
+
+        lightbox.classList.add("active");
+    }
+
+
+    function closeLightbox() {
+
+        const lightbox =
+            document.getElementById("lightbox");
+
+        lightbox.classList.remove("active");
+    }
+
+
+    document.addEventListener("keydown", function(event) {
+
+        if (event.key === "Escape") {
+            closeLightbox();
+        }
+
+    });
+
+</script>
+
 
 </body>
 </html>
